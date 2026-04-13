@@ -1,0 +1,29 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual env
+.venv/
+venv/
+
+# Environment
+.env
+
+# Logs and outputs
+logs/mission_logs/*
+logs/case_files/*
+!logs/mission_logs/.gitkeep
+!logs/case_files/.gitkeep
+
+# Editors/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
