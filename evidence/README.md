@@ -1,5 +1,12 @@
-﻿# Evidence Directory
+# Evidence Directory
 
-This directory is intended as a read-only mount point for forensic evidence.
+This directory is reserved for case evidence.
 
-Do not modify original evidence contents.
+Operational rule:
+Treat every file under this directory as read-only evidence. Do not edit, rename, or delete artifacts in place.
+
+Recommended usage:
+
+- Mount evidence here read-only when running inside SIFT or Docker.
+- Store derived outputs under `logs/`, not beside the evidence.
+- If a tool requires transformation, write the derived artifact somewhere outside this folder.

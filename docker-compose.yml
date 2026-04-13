@@ -1,9 +1,13 @@
-﻿version: "3.9"
-
 services:
-  redis:
-    image: redis:7-alpine
-    container_name: nightwing-redis
-    ports:
-      - "6379:6379"
-    restart: unless-stopped
+  nightwing:
+    image: python:3.12-slim
+    container_name: nightwing
+    working_dir: /app
+    command: >
+      sh -c "pip install --no-cache-dir -r requirements.txt &&
+      python -m nightwing.main run --case-id compose-demo"
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+    restart: "no"
